@@ -11,51 +11,33 @@ Forms:
 .form {
   display: flex;
   flex-direction: column;
-  // justify-content: flex-start;
-  // align-items: flex-start;
-
-  // TESTING
   width: 450px;
-  // align-items: center;
-  // justify-content: center;
-
-  // color: black;
+  @include mq("desktop") {
+    // margin-left: 20px;
+    padding-left: 50px;
+  }
   .btn--default {
     margin: 0;
     padding: 0;
-    // margin-top: 15px;
     margin-bottom: 45px;
-    // margin-bottom: 40px;
     margin-top: -5px;
-
-    // margin-bottom: 25px;
   }
 }
 
 .form__legend {
-  // align-self: flex-start;
   display: flex;
-
-  // TESTING
-  // width: 450px;
-
 }
 
 .form__label--hidden {
-
-  // TESTING
   display: flex;
   display: none;
 }
 
 .form__input {
-
-  // TESTING
   display: flex;
   width: 375px;
   align-self: center;
 
-  margin-bottom: 10px;
   padding-bottom: 10px;
   margin-bottom: 30px;
 
@@ -67,6 +49,9 @@ Forms:
 
   outline: none;
   padding-left: 15px;
+  @include mq("desktop") {
+    width: 325px;
+  }
 
   &::placeholder {
     // padding-left: 15px;

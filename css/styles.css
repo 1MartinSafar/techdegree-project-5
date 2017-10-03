@@ -468,6 +468,13 @@ template {
 ul {
   margin: 0;
   padding: 0; }
+  @media (min-width: 1400px) {
+    ul {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 90px;
+      margin-left: 100px;
+      margin-left: 200px; } }
 
 p {
   padding-left: 2.25em;
@@ -478,6 +485,10 @@ p {
   color: #737373;
   color: gray;
   font-size: 1.125em; }
+  @media (min-width: 1400px) {
+    p {
+      padding: 0;
+      font-size: 1em; } }
 
 /*
 
@@ -722,6 +733,11 @@ Grid:
   align-items: center;
   justify-content: flex-start;
   align-items: flex-start; }
+  @media (min-width: 1400px) {
+    .container {
+      max-width: 1000px;
+      max-width: 1085px;
+      margin: auto; } }
 
 .centered {
   text-align: center; }
@@ -1008,6 +1024,17 @@ Grid:
     padding: 0; } }
 .grid__col--8 {
   margin-top: 5em; }
+  @media (min-width: 1400px) {
+    .grid__col--8 {
+      margin-top: 0; } }
+
+@media (min-width: 1400px) {
+  .grid__col--9 {
+    flex-direction: row; } }
+
+@media (min-width: 1400px) {
+  .grid__col--12 {
+    margin-bottom: 85px; } }
 
 .grid__col--12.theme__colors {
   background-color: rgba(55, 224, 163, 0.5);
@@ -1072,11 +1099,18 @@ Typography:
   font-size: 1.5em;
   padding-left: 0.9375em;
   margin-left: 2.5em;
-  margin-bottom: 2.5em;
   margin-bottom: 1.25em;
   border-left: 10px solid #62ddc2;
   border-radius: 0.4em;
   opacity: 0.75; }
+  @media (min-width: 1400px) {
+    .blockquote {
+      max-width: 650px;
+      line-height: 1.25;
+      margin-left: 0.625em;
+      padding-left: 1.5625em;
+      margin-right: 0;
+      margin-bottom: 0; } }
 
 .headline--primary {
   color: #62ddc2;
@@ -1087,6 +1121,13 @@ Typography:
   padding-right: 1.875em;
   padding-top: 0.0625em;
   padding-bottom: 1.25em; }
+  @media (min-width: 1400px) {
+    .headline--primary {
+      font-size: 1.75em;
+      font-weight: 700;
+      padding-left: 0.9375em;
+      padding-right: 0.9375em;
+      padding-bottom: 0.875em; } }
 
 .headline--secondary {
   font-size: 1.125em;
@@ -1100,6 +1141,12 @@ Typography:
   margin: 0;
   color: rgba(0, 0, 0, 0.5);
   margin-top: 15px; }
+  @media (min-width: 1400px) {
+    .headline--secondary {
+      padding: 0;
+      margin: 0;
+      padding-left: 0.625em;
+      margin-bottom: 0.625em; } }
 
 /*
 //
@@ -1115,9 +1162,17 @@ Typography:
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+  @media (min-width: 1400px) {
+    .nav__item {
+      flex-direction: row;
+      width: auto; } }
   .nav__item:last-of-type {
     padding-bottom: 4.0625em;
     padding-bottom: 5em; }
+    @media (min-width: 1400px) {
+      .nav__item:last-of-type {
+        margin: 0;
+        padding: 0; } }
   .nav__item a {
     text-decoration: none;
     display: block;
@@ -1127,6 +1182,15 @@ Typography:
     margin-bottom: 5px;
     border-radius: 0.4em;
     color: #343434; }
+    @media (min-width: 1400px) {
+      .nav__item a {
+        display: flex;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        margin-top: 73px;
+        margin-right: 30px;
+        padding: 7px; } }
     .nav__item a:hover {
       color: white;
       background-color: #62ddc2; }
@@ -1144,6 +1208,12 @@ Image:
   margin: 3.125em 0;
   margin-top: 3.125em;
   margin-bottom: 2.5em; }
+  @media (min-width: 1400px) {
+    .img--logo {
+      margin: 0;
+      padding: 0;
+      margin-top: 50px;
+      margin-left: 40px; } }
 
 .img--frame {
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -1190,9 +1260,12 @@ Buttons:
   color: white;
   background-color: #60daf0;
   text-transform: uppercase;
-  margin-top: 10px;
   margin-bottom: 10px;
   margin-top: 30px; }
+  @media (min-width: 1400px) {
+    .btn--default {
+      width: 350px;
+      margin-bottom: 0; } }
 .btn--default.theme__colors {
   margin-top: 50px; }
 .btn--success {
@@ -1235,6 +1308,9 @@ Forms:
   display: flex;
   flex-direction: column;
   width: 450px; }
+  @media (min-width: 1400px) {
+    .form {
+      padding-left: 50px; } }
   .form .btn--default {
     margin: 0;
     padding: 0;
@@ -1252,7 +1328,6 @@ Forms:
   display: flex;
   width: 375px;
   align-self: center;
-  margin-bottom: 10px;
   padding-bottom: 10px;
   margin-bottom: 30px;
   color: #343434;
@@ -1261,6 +1336,9 @@ Forms:
   border-bottom: 5.5px solid #62ddc2;
   outline: none;
   padding-left: 15px; }
+  @media (min-width: 1400px) {
+    .form__input {
+      width: 325px; } }
   .form__input:focus::placeholder {
     visibility: hidden; }
 

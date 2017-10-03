@@ -31,6 +31,14 @@ Grid:
   // TESTING
   justify-content: flex-start;
   align-items: flex-start;
+
+  @include mq("desktop") {
+    max-width: 1000px;
+    max-width: 1085px;
+    // justify-content: center;
+    // align-items: center;
+    margin: auto;
+  }
 }
 
 .centered {
@@ -111,6 +119,19 @@ Grid:
 
 .grid__col--8 {
   margin-top: em(80px);
+  @include mq("desktop") {
+    margin-top: 0;
+  }
+}
+.grid__col--9 {
+  @include mq("desktop") {
+    flex-direction: row;
+  }
+}
+.grid__col--12 {
+  @include mq("desktop") {
+    margin-bottom: 85px;
+  }
 }
 
 // ======================================================================

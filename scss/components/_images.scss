@@ -15,6 +15,13 @@ Image:
   margin: em(50px) 0;
   margin-top: em(50px);
   margin-bottom: em(40px);
+  @include mq("desktop") {
+    margin: 0;
+    padding: 0;
+    margin-top: 50px;
+    margin-left: 40px;
+    // width: 130px;
+  }
 }
 
 .img--frame {

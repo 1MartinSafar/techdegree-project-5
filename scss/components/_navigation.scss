@@ -41,9 +41,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @include mq("desktop") {
+    flex-direction: row;
+    width: auto;
+  }
   &:last-of-type {
     padding-bottom: em(65px);
     padding-bottom: em(80px);
+    @include mq("desktop") {
+      margin: 0;
+      padding: 0;
+    }
   }
   a {
     text-decoration: none;
@@ -56,6 +64,15 @@
     border-radius: 0.4em;
 
     color: $color-text;
+    @include mq("desktop") {
+      display: flex;
+      width: auto;
+      margin: 0;
+      padding: 0;
+      margin-top: 73px;
+      margin-right: 30px;
+      padding: 7px;
+    }
     &:hover {
       color: white;
       background-color: $color-primary;

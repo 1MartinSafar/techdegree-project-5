@@ -33,20 +33,25 @@ Typography:
 
 .blockquote {
   font-style: italic;
-
   max-width: 325px;
 
   font-size: em(24px);
-  // font-size: em(25px);
   padding-left: em(15px);
   margin-left: em(40px);
-  margin-bottom: em(40px);
   margin-bottom: em(20px);
 
   border-left: 10px solid $color-primary;
   border-radius: 0.4em;
 
   opacity: 0.75;
+  @include mq("desktop") {
+    max-width: 650px;
+    line-height: 1.25;
+    margin-left: em(10px);
+    padding-left: em(25px);
+    margin-right: 0;
+    margin-bottom: 0;
+  }
 }
 
 .headline--primary {
@@ -61,6 +66,14 @@ Typography:
 
   padding-top: em(1px);
   padding-bottom: em(20px);
+  @include mq("desktop") {
+    font-size: 1.75em;
+    // letter-spacing: 0;
+    font-weight: $font-weight--bold;
+    padding-left: em(15px);
+    padding-right: em(15px);
+    padding-bottom: em(14px);
+  }
 }
 .headline--secondary {
   font-size: em(18px);
@@ -69,26 +82,20 @@ Typography:
   color: lighten(gray, 10%);
   opacity: 1;
 
-  // margin-left: em(36px);
-
   padding-left: em(36px);
-
-  // padding-left: em(18px);
-  // padding-right: em(18px);
   padding-top: em(10px);
   padding-bottom: em(10px);
   margin: 0;
 
-  // margin: auto;
-
-
-  // TESTING
-  // display: flex;
-  // align-self: flex-start;
-
   color: rgba(black, 0.5);
-
   margin-top: 15px;
+
+  @include mq("desktop") {
+    padding: 0;
+    margin: 0;
+    padding-left: em(10px);
+    margin-bottom: em(10px);
+  }
 
 }
 
