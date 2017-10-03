@@ -1,0 +1,109 @@
+/*
+
+All your styles for this project will be applied using the classes listed in
+the comment at the top of the index.html file. You’ll style these classes
+in the components folder. Try not to combine selectors from two different
+categories. For example, avoid using .grid__col--8 .link to style
+the link in the typography section, as it makes the style of links
+dependent on what grid column they’re in. The best way to organize this
+is to make a file in the components folder for each of the following:
+
+=> Grid (recommend using flexbox)
+=> Typography
+=> Navigation
+=> Images
+=> Buttons
+=> Forms
+
+*/
+
+/*
+
+Buttons:
+
+.btn--default
+.btn--success
+.btn--error
+.btn--warning
+.btn--info
+
+*/
+
+.btn {
+  &--default {
+    // TESTING
+    @extend %btn-base;
+    color: white;
+    background-color: $color-default;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  &--default.theme__colors {
+    margin-top: 50px;
+  }
+  &--success {
+    @extend %btn-base;
+    color: white;
+    background-color: $color-success;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &--error {
+    @extend %btn-base;
+    color: white;
+    background-color: $color-error;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &--warning {
+    @extend %btn-base;
+    color: white;
+    background-color: $color-warning;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  &--info {
+    @extend %btn-base;
+    color: white;
+    background-color: $color-info;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-bottom: 50px;
+    margin-bottom: 35px;
+  }
+}
+
+// @for $i from 1 through 10 {
+//     .box-#{$i} {
+//     background-color: adjust-hue(tomato, $i * 20);
+//   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

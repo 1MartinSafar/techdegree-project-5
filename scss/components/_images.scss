@@ -1,0 +1,46 @@
+/*
+
+Image:
+.img__logo
+.img__frame
+.img__avatar
+
+*/
+
+// ONCE GRID PARTS ARE FLEX
+
+
+.img--logo {
+  margin: em(40px) 0;
+  margin: em(50px) 0;
+  margin-top: em(50px);
+  margin-bottom: em(40px);
+}
+
+.img--frame {
+  border: 1px solid rgba(0,0,0, 0.3);
+
+  padding: em(12.5px);
+  margin-bottom: em(30px);
+  width: em(400px);
+
+  // TESTING
+  margin-top: em(30px);
+}
+
+.img--avatar {
+  // border-radius: 50%;
+  // display: block;
+  display:flex;
+  margin: auto;
+
+  margin-bottom: em(32px);
+  // margin-bottom: em(50px);
+
+  // align-self: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // text-align: center;
+  // vertical-align: center;
+}

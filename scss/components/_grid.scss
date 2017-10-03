@@ -1,0 +1,155 @@
+/*
+
+Grid:
+
+.container
+.grid__row
+
+.grid__col--2
+.grid__col--3
+.grid__col--4
+.grid__col--5
+.grid__col--6
+.grid__col--7
+.grid__col--8
+.grid__col--9
+.grid__col--10
+.grid__col--11
+.grid__col--12
+
+.centered
+
+*/
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // TESTING
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.centered {
+  text-align: center;
+}
+
+.grid__row {
+  display: flex;
+  flex-direction: column;
+  // MEDIA => ROW
+  // padding-top: em(20px);
+  // padding-bottom: em(20px);
+
+  // TESTING
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+// ======================================================================
+//                        EVERY COLUMN (2-12) | EVERY GRID
+// ======================================================================
+
+@for $i from 2 through 12 {
+  .grid__col--#{$i} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    // TESTING
+    align-self: center;
+  }
+  .grid__col--#{$i}.theme__colors {
+    @extend %btn-base;
+    align-items: flex-start;
+    color: rgba($color-text, 0.7);
+    padding-left: 10px;
+    margin-bottom: 6px;
+  }
+}
+
+// ======================================================================
+//                        OUTSIDE GRID SYSTEM
+// ======================================================================
+
+.grid__col--8 {
+  margin-top: em(80px);
+}
+
+// ======================================================================
+//                        GRID SYSTEM
+// ======================================================================
+
+.grid__col--12.theme__colors {
+  background-color: rgba(#37e0a3, 0.5);
+  margin-top: 30px;
+}
+.grid__col--6.theme__colors {
+  background-color: rgba(#0088b6, 0.75);
+  &:first-child {
+    margin-top: 40px;
+  }
+}
+.grid__col--4.theme__colors {
+  background-color: rgba($color-default, 0.7);
+  &:first-child {
+    margin-top: 40px;
+  }
+}
+.grid__col--3.theme__colors {
+  // background-color: rgba($color-info, 0.5);
+  background-color: rgba(#ca88f7, 0.6);
+  &:first-child {
+    margin-top: 40px;
+  }
+}
+.grid__col--5.theme__colors {
+  background-color: rgba($color-success, 0.7);
+  &:first-child {
+    margin-top: 40px;
+  }
+}
+.grid__col--7.theme__colors {
+  background-color: rgba(red, 0.4);
+  &:only-child {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+.grid__col--8.theme__colors {
+  // background-color: rgba($color-warning, 0.6);
+  // background-color: rgba(#fa8559, 0.8);
+  // background-color: rgba(#fc4600, 0.55);
+  background-color: rgba(#fc3500, 0.55);
+  margin-top: 40px;
+}
+
+// MEDIA QUERY
+
+// $grid__cols: 12;
+// @for $i from 1 through $grid__cols {
+//   .col-#{$i} {
+//     flex-basis: (100 / ($grid__cols / $i) ) * 1%;
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
