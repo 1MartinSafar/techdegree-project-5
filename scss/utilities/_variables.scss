@@ -21,8 +21,12 @@ $font-weight--ultra-bold : 900;
 
 // Breakpoints
 
-$break-mobile  : 768px;
-$break-desktop : 1100px;
+$mobile  : 480px;
+$desktop : 1400px;
+
+// Number of Columns
+
+$grid__cols: 12;
 
 
 // Colors - Descriptive

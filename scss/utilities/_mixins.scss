@@ -12,7 +12,21 @@ Inside your mixins partial, you’ll want to create mixins for:
 //                        ALREADY IN USE NOW
 // ======================================================================
 
-
+@mixin mq($break) {
+  @if $break == "mobile" {
+    @media (min-width: $mobile) {
+      @content;
+    }
+  }
+  @else if $break == "desktop" {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+   @else {
+   	@error "Whoops! No value could be retrieved for `#{$break}`. ";
+  }
+}
 
 // ======================================================================
 //                        OTHERS
@@ -34,43 +48,25 @@ Inside your mixins partial, you’ll want to create mixins for:
 }
 
 // Media queries
-
-@mixin mq($break) {
-  @if $break == "mobile" {
-    @media (min-width: $brkpoint-md + 1) {
-      @content;
-    }
-  }
-  @else if $break == "large" {
-    @media (min-width: $brkpoint-lg) {
-      @content;
-    }
-  }
-   @else {
-   	@error "Whoops! No value could be retrieved for `#{$break}`. ";
-  }
-}
-
-// Media queries
-@mixin mq($break) {
-  $value: map-get($breakpoints, $break);
-  $sm: map-get($breakpoints, 'sm');
-
-  @if $value == null {
-    @error "`#{$break}` is not a valid breakpoint name.";
-  }
-
-  @else if $value < $sm {
-    @media (max-width: $value) {
-      @content;
-    }
-  }
-  @else {
-    @media (min-width: $value) {
-      @content;
-    }
-  }
-}
+// @mixin mq($break) {
+//   $value: map-get($breakpoints, $break);
+//   $sm: map-get($breakpoints, 'sm');
+//
+//   @if $value == null {
+//     @error "`#{$break}` is not a valid breakpoint name.";
+//   }
+//
+//   @else if $value < $sm {
+//     @media (max-width: $value) {
+//       @content;
+//     }
+//   }
+//   @else {
+//     @media (min-width: $value) {
+//       @content;
+//     }
+//   }
+// }
 
 
 

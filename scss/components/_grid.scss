@@ -48,6 +48,17 @@ Grid:
   justify-content: center;
   align-items: center;
   align-self: center;
+
+  @include mq("desktop") {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
 }
 
 // ======================================================================
@@ -72,6 +83,27 @@ Grid:
     margin-bottom: 6px;
   }
 }
+
+// MEDIA QUERY
+
+@for $i from 2 through $grid__cols {
+  @include mq("desktop") {
+    .grid__col--#{$i},
+    .grid__col--#{$i}.theme__colors {
+      display: flex;
+      flex-direction: column;
+      flex-basis: (100 / ($grid__cols / $i) ) * 1%;
+
+      justify-content: flex-start;
+      align-items: flex-start;
+      align-self: flex-start;
+
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
 
 // ======================================================================
 //                        OUTSIDE GRID SYSTEM
@@ -129,14 +161,7 @@ Grid:
   margin-top: 40px;
 }
 
-// MEDIA QUERY
 
-// $grid__cols: 12;
-// @for $i from 1 through $grid__cols {
-//   .col-#{$i} {
-//     flex-basis: (100 / ($grid__cols / $i) ) * 1%;
-//   }
-// }
 
 
 
