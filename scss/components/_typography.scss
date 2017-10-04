@@ -56,13 +56,16 @@ Typography:
   padding-left: em(30px);
   padding-right: em(30px);
   padding-bottom: em(20px);
+  padding-bottom: em(15px);
   margin: 0;
   @include mq("desktop") {
     font-size: 1.75em;
     font-weight: $font-weight--bold;
+    padding-top: em(5px);
     padding-left: em(15px);
     padding-right: em(15px);
     padding-bottom: em(14px);
+    padding-bottom: em(20px);
   }
 }
 .headline--secondary {

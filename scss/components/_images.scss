@@ -28,6 +28,7 @@ Image:
   margin-bottom: em(30px);
   @include mq("desktop") {
     width: em(410px);
+    width: em(430px);
     margin-top: em(40px);
     margin-left: em(75px);
     margin-bottom: em(55px);
@@ -40,9 +41,25 @@ Image:
   margin: auto;
   margin-top: em(55px);
   margin-bottom: em(32px);
+
+  margin-top: em(0px);
+  margin-bottom: em(20px);
 }
 
+.form .img--avatar {
+  @include mq("desktop") {
+      // margin-top: em(0px);
+      // margin-bottom: em(20px);
+  }
+}
 
+.grid__col--6 .img--avatar {
+  @include mq("desktop") {
+      margin-top: em(55px);
+      // margin-top: em(0px);
+      // margin-bottom: em(20px);
+  }
+}
 
 
 
