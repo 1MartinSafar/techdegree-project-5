@@ -2,7 +2,6 @@
 
 Forms:
 .form
-.form__legend
 .form__label--hidden
 .form__input
 
@@ -13,7 +12,6 @@ Forms:
   flex-direction: column;
   width: 450px;
   @include mq("desktop") {
-    // margin-left: 20px;
     padding-left: 50px;
   }
   .btn--default {
@@ -24,10 +22,6 @@ Forms:
   }
 }
 
-.form__legend {
-  display: flex;
-}
-
 .form__label--hidden {
   display: flex;
   display: none;
@@ -35,20 +29,18 @@ Forms:
 
 .form__input {
   display: flex;
-  width: 375px;
   align-self: center;
-
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-
   color: $color-text;
   font-weight: $font-weight--bold;
+  width: 375px;
 
   border: none;
   border-bottom: 5.5px solid $color-primary;
-
   outline: none;
+
+  padding-bottom: 10px;
   padding-left: 15px;
+  margin-bottom: 30px;
   @include mq("desktop") {
     width: 325px;
   }
@@ -59,8 +51,6 @@ Forms:
   &:focus::placeholder {
     visibility: hidden;
   }
-
-
 }
 
 

@@ -30,21 +30,31 @@ Buttons:
 */
 
 .btn {
-  &--default {
-    // TESTING
+  // &--default[type="submit"] {
+  //   @extend %btn-base;
+  //   color: white;
+  //   background-color: $color-default;
+  //   text-transform: uppercase;
+  //   margin-top: 30px;
+  //   margin-bottom: 10px;
+  //   @include mq("desktop") {
+  //     width: 350px;
+  //     margin-bottom: 0;
+  //   }
+  // }
+  &--default.theme__colors {
     @extend %btn-base;
     color: white;
     background-color: $color-default;
     text-transform: uppercase;
-    margin-bottom: 10px;
-    margin-top: 30px;
-    @include mq("desktop") {
-      width: 350px;
-      margin-bottom: 0;
-    }
-  }
-  &--default.theme__colors {
     margin-top: 50px;
+    @include mq("desktop") {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
   &--success {
     @extend %btn-base;
@@ -53,6 +63,14 @@ Buttons:
     text-transform: uppercase;
     margin-top: 10px;
     margin-bottom: 10px;
+    @include mq("desktop") {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-bottom: 0;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
   &--error {
     @extend %btn-base;
@@ -61,6 +79,14 @@ Buttons:
     text-transform: uppercase;
     margin-top: 10px;
     margin-bottom: 10px;
+    @include mq("desktop") {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-bottom: 0;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
   &--warning {
     @extend %btn-base;
@@ -69,6 +95,14 @@ Buttons:
     text-transform: uppercase;
     margin-top: 10px;
     margin-bottom: 10px;
+    @include mq("desktop") {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-bottom: 0;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
   &--info {
     @extend %btn-base;
@@ -76,18 +110,29 @@ Buttons:
     background-color: $color-info;
     text-transform: uppercase;
     margin-top: 10px;
-    margin-bottom: 10px;
-    margin-bottom: 50px;
     margin-bottom: 35px;
+    @include mq("desktop") {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-bottom: 0;
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+  &--default[type="submit"] {
+    @extend %btn-base;
+    color: white;
+    background-color: $color-default;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    @include mq("desktop") {
+      width: 350px;
+      margin-bottom: 0;
+    }
   }
 }
-
-// @for $i from 1 through 10 {
-//     .box-#{$i} {
-//     background-color: adjust-hue(tomato, $i * 20);
-//   }
-
-
 
 
 

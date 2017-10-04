@@ -11,44 +11,37 @@ Typography:
 */
 
 .container {
+  color       : $color-text;
   font-family : $font-family--primary;
   font-weight : $font-weight--medium;
   font-size   : $base__font-size;
-
   line-height : $base__line-height;
-  color: $color-text;
-  // color: $gray-dark;
-
-
-  // TESTING
-  // display: flex;
-
 }
 
 .link {
-  text-decoration: none;
   color: $color-accent;
   font-weight: $font-weight--bold;
+  text-decoration: none;
 }
 
 .blockquote {
   font-style: italic;
   max-width: 325px;
-
   font-size: em(24px);
-  padding-left: em(15px);
-  margin-left: em(40px);
-  margin-bottom: em(20px);
 
   border-left: 10px solid $color-primary;
   border-radius: 0.4em;
-
   opacity: 0.75;
+
+  padding-left: em(15px);
+  margin-left: em(40px);
+  margin-bottom: em(20px);
   @include mq("desktop") {
     max-width: 650px;
     line-height: 1.25;
-    margin-left: em(10px);
+
     padding-left: em(25px);
+    margin-left: em(10px);
     margin-right: 0;
     margin-bottom: 0;
   }
@@ -57,18 +50,15 @@ Typography:
 .headline--primary {
   color: $color-primary;
   font-weight: $font-weight--ultra-bold;
-
   line-height: 1.1;
-  margin: 0;
-
-  padding-left: em(30px);
-  padding-right: em(30px);
 
   padding-top: em(1px);
+  padding-left: em(30px);
+  padding-right: em(30px);
   padding-bottom: em(20px);
+  margin: 0;
   @include mq("desktop") {
     font-size: 1.75em;
-    // letter-spacing: 0;
     font-weight: $font-weight--bold;
     padding-left: em(15px);
     padding-right: em(15px);
@@ -78,25 +68,20 @@ Typography:
 .headline--secondary {
   font-size: em(18px);
   font-weight: $font-weight--medium;
-  color: gray;
-  color: lighten(gray, 10%);
-  opacity: 1;
+  color: rgba(black, 0.5);
 
-  padding-left: em(36px);
   padding-top: em(10px);
+  padding-left: em(36px);
   padding-bottom: em(10px);
   margin: 0;
-
-  color: rgba(black, 0.5);
   margin-top: 15px;
 
   @include mq("desktop") {
     padding: 0;
-    margin: 0;
     padding-left: em(10px);
+    margin: 0;
     margin-bottom: em(10px);
   }
-
 }
 
 

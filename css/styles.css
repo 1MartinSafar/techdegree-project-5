@@ -55,7 +55,7 @@ In your placeholder partial, create placeholders for at least the following:
 => Nav items
 
 */
-.grid__col--2.theme__colors, .grid__col--3.theme__colors, .grid__col--4.theme__colors, .grid__col--5.theme__colors, .grid__col--6.theme__colors, .grid__col--7.theme__colors, .grid__col--8.theme__colors, .grid__col--9.theme__colors, .grid__col--10.theme__colors, .grid__col--11.theme__colors, .grid__col--12.theme__colors, .btn--default, .btn--success, .btn--error, .btn--warning, .btn--info {
+.grid__col--2.theme__colors, .grid__col--3.theme__colors, .grid__col--4.theme__colors, .grid__col--5.theme__colors, .grid__col--6.theme__colors, .grid__col--7.theme__colors, .grid__col--8.theme__colors, .grid__col--9.theme__colors, .grid__col--10.theme__colors, .grid__col--11.theme__colors, .grid__col--12.theme__colors, .btn--default.theme__colors, .btn--success, .btn--error, .btn--warning, .btn--info, .btn--default[type="submit"] {
   align-self: center;
   width: 400px;
   height: 45px;
@@ -472,19 +472,15 @@ ul {
     ul {
       display: flex;
       flex-direction: row;
-      margin-bottom: 90px;
-      margin-left: 100px;
-      margin-left: 200px; } }
+      margin-left: 200px;
+      margin-bottom: 90px; } }
 
 p {
-  padding-left: 2.25em;
-  padding-right: 2.25em;
+  color: gray;
+  font-size: 1.125em;
   padding-left: 2.025em;
   padding-right: 2.025em;
-  margin: 0;
-  color: #737373;
-  color: gray;
-  font-size: 1.125em; }
+  margin: 0; }
   @media (min-width: 1400px) {
     p {
       padding: 0;
@@ -729,13 +725,10 @@ Grid:
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   justify-content: flex-start;
   align-items: flex-start; }
   @media (min-width: 1400px) {
     .container {
-      max-width: 1000px;
       max-width: 1085px;
       margin: auto; } }
 
@@ -1034,6 +1027,7 @@ Grid:
 
 @media (min-width: 1400px) {
   .grid__col--12 {
+    flex-direction: row;
     margin-bottom: 85px; } }
 
 .grid__col--12.theme__colors {
@@ -1082,33 +1076,33 @@ Typography:
 
 */
 .container {
+  color: #343434;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5;
-  color: #343434; }
+  line-height: 1.5; }
 
 .link {
-  text-decoration: none;
   color: #05EDFF;
-  font-weight: 700; }
+  font-weight: 700;
+  text-decoration: none; }
 
 .blockquote {
   font-style: italic;
   max-width: 325px;
   font-size: 1.5em;
-  padding-left: 0.9375em;
-  margin-left: 2.5em;
-  margin-bottom: 1.25em;
   border-left: 10px solid #62ddc2;
   border-radius: 0.4em;
-  opacity: 0.75; }
+  opacity: 0.75;
+  padding-left: 0.9375em;
+  margin-left: 2.5em;
+  margin-bottom: 1.25em; }
   @media (min-width: 1400px) {
     .blockquote {
       max-width: 650px;
       line-height: 1.25;
-      margin-left: 0.625em;
       padding-left: 1.5625em;
+      margin-left: 0.625em;
       margin-right: 0;
       margin-bottom: 0; } }
 
@@ -1116,11 +1110,11 @@ Typography:
   color: #62ddc2;
   font-weight: 900;
   line-height: 1.1;
-  margin: 0;
+  padding-top: 0.0625em;
   padding-left: 1.875em;
   padding-right: 1.875em;
-  padding-top: 0.0625em;
-  padding-bottom: 1.25em; }
+  padding-bottom: 1.25em;
+  margin: 0; }
   @media (min-width: 1400px) {
     .headline--primary {
       font-size: 1.75em;
@@ -1132,20 +1126,17 @@ Typography:
 .headline--secondary {
   font-size: 1.125em;
   font-weight: 400;
-  color: gray;
-  color: #9a9a9a;
-  opacity: 1;
-  padding-left: 2.25em;
+  color: rgba(0, 0, 0, 0.5);
   padding-top: 0.625em;
+  padding-left: 2.25em;
   padding-bottom: 0.625em;
   margin: 0;
-  color: rgba(0, 0, 0, 0.5);
   margin-top: 15px; }
   @media (min-width: 1400px) {
     .headline--secondary {
       padding: 0;
-      margin: 0;
       padding-left: 0.625em;
+      margin: 0;
       margin-bottom: 0.625em; } }
 
 /*
@@ -1167,27 +1158,25 @@ Typography:
       flex-direction: row;
       width: auto; } }
   .nav__item:last-of-type {
-    padding-bottom: 4.0625em;
     padding-bottom: 5em; }
     @media (min-width: 1400px) {
       .nav__item:last-of-type {
         margin: 0;
         padding: 0; } }
   .nav__item a {
-    text-decoration: none;
     display: block;
     text-align: center;
+    text-decoration: none;
     width: 410px;
-    padding: 12px 0;
-    margin-bottom: 5px;
+    color: #343434;
     border-radius: 0.4em;
-    color: #343434; }
+    padding: 12px 0;
+    margin-bottom: 5px; }
     @media (min-width: 1400px) {
       .nav__item a {
         display: flex;
         width: auto;
         margin: 0;
-        padding: 0;
         margin-top: 73px;
         margin-right: 30px;
         padding: 7px; } }
@@ -1198,13 +1187,12 @@ Typography:
 /*
 
 Image:
-.img__logo
-.img__frame
-.img__avatar
+.img--logo
+.img--frame
+.img--avatar
 
 */
 .img--logo {
-  margin: 2.5em 0;
   margin: 3.125em 0;
   margin-top: 3.125em;
   margin-bottom: 2.5em; }
@@ -1216,15 +1204,22 @@ Image:
       margin-left: 40px; } }
 
 .img--frame {
+  width: 25em;
   border: 1px solid rgba(0, 0, 0, 0.3);
   padding: 0.78125em;
-  margin-bottom: 1.875em;
-  width: 25em;
-  margin-top: 1.875em; }
+  margin-top: 1.875em;
+  margin-bottom: 1.875em; }
+  @media (min-width: 1400px) {
+    .img--frame {
+      width: 25.625em;
+      margin-top: 2.5em;
+      margin-left: 4.6875em;
+      margin-bottom: 3.4375em; } }
 
 .img--avatar {
   display: flex;
   margin: auto;
+  margin-top: 3.4375em;
   margin-bottom: 2em; }
 
 /*
@@ -1256,50 +1251,89 @@ Buttons:
 .btn--info
 
 */
-.btn--default {
+.btn--default.theme__colors {
   color: white;
   background-color: #60daf0;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  margin-top: 30px; }
-  @media (min-width: 1400px) {
-    .btn--default {
-      width: 350px;
-      margin-bottom: 0; } }
-.btn--default.theme__colors {
   margin-top: 50px; }
+  @media (min-width: 1400px) {
+    .btn--default.theme__colors {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      padding-left: 50px;
+      padding-right: 50px; } }
 .btn--success {
   color: white;
   background-color: #3fd96a;
   text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 10px; }
+  @media (min-width: 1400px) {
+    .btn--success {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-bottom: 0;
+      padding-left: 50px;
+      padding-right: 50px; } }
 .btn--error {
   color: white;
   background-color: #ff4646;
   text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 10px; }
+  @media (min-width: 1400px) {
+    .btn--error {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-bottom: 0;
+      padding-left: 50px;
+      padding-right: 50px; } }
 .btn--warning {
   color: white;
   background-color: #ee751e;
   text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 10px; }
+  @media (min-width: 1400px) {
+    .btn--warning {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-bottom: 0;
+      padding-left: 50px;
+      padding-right: 50px; } }
 .btn--info {
   color: white;
   background-color: #9974f4;
   text-transform: uppercase;
   margin-top: 10px;
-  margin-bottom: 10px;
-  margin-bottom: 50px;
   margin-bottom: 35px; }
+  @media (min-width: 1400px) {
+    .btn--info {
+      width: auto;
+      margin-top: 50px;
+      margin-left: 50px;
+      margin-bottom: 0;
+      padding-left: 50px;
+      padding-right: 50px; } }
+.btn--default[type="submit"] {
+  color: white;
+  background-color: #60daf0;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 10px; }
+  @media (min-width: 1400px) {
+    .btn--default[type="submit"] {
+      width: 350px;
+      margin-bottom: 0; } }
 
 /*
 
 Forms:
 .form
-.form__legend
 .form__label--hidden
 .form__input
 
@@ -1317,25 +1351,22 @@ Forms:
     margin-bottom: 45px;
     margin-top: -5px; }
 
-.form__legend {
-  display: flex; }
-
 .form__label--hidden {
   display: flex;
   display: none; }
 
 .form__input {
   display: flex;
-  width: 375px;
   align-self: center;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
   color: #343434;
   font-weight: 700;
+  width: 375px;
   border: none;
   border-bottom: 5.5px solid #62ddc2;
   outline: none;
-  padding-left: 15px; }
+  padding-bottom: 10px;
+  padding-left: 15px;
+  margin-bottom: 30px; }
   @media (min-width: 1400px) {
     .form__input {
       width: 325px; } }
