@@ -1,60 +1,3 @@
-@charset "UTF-8";
-/*
-
-=> Use this partial to create variables for your repeated values.
-
-*/
-/*
-we'll write a function that gives us total control over the number of
-flex items being displayed on one line. The function will help us display
-equally sized and spaced items that line up perfectly across multiple lines.
-
-* if we create $gutter = 10px and add it as margin => it breaks the layout
-because the browser does not include margin values in its flex-basis
-calculations => we could apply smaller % like 45% to fix it.
-* So now, if we wanted to force three equal with items per line in a large
-break point, we need to manually figure out another flex basis value to
-achieve this. So Sass can do this work for us. We just need to create a
-function to do the calculations. The function will subtract the total gutter
-value of each line based on the number of items per line. So it's gonna return
-a percentage value we'll use as the flex basis.
-
-
-
-@function px-to-pc($target, $context: $max-width) {
-  @return ($target / $context) * 100%;
-}
-
-
-
-@function per-line($items) {
-  $g-pct: px-to-pc($gutter) * 2;
-  $g-total: $items * $g-pct;
-  @return (100% / $items) - $g-total;
-}
-
-
-=>
-@media (min-width: $break-s) {
-  flex: 1 per-line(2);
-}
-
-@media (min-width: $break-l) {
-  flex-basis: per-line(3);
-}
-
-
-
-*/
-/*
-
-In your placeholder partial, create placeholders for at least the following:
-=> Links
-=> Images
-=> Headlines
-=> Nav items
-
-*/
 .grid__col--2.theme__colors, .grid__col--3.theme__colors, .grid__col--4.theme__colors, .grid__col--5.theme__colors, .grid__col--6.theme__colors, .grid__col--7.theme__colors, .grid__col--8.theme__colors, .grid__col--9.theme__colors, .grid__col--10.theme__colors, .grid__col--11.theme__colors, .grid__col--12.theme__colors, .btn--default.theme__colors, .btn--success, .btn--error, .btn--warning, .btn--info, .btn--default[type="submit"] {
   align-self: center;
   width: 400px;
@@ -63,14 +6,6 @@ In your placeholder partial, create placeholders for at least the following:
   border: none;
   border-radius: 0.4em; }
 
-/*
-
-Inside your mixins partial, youÔÇÖll want to create mixins for:
-=> Media Queries
-=> Flexbox settings
-=> Element and Modifier BEM Selectors
-
-*/
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -466,14 +401,8 @@ template {
   box-sizing: border-box; }
 
 ul {
-  margin: 0;
-  padding: 0; }
-  @media (min-width: 1400px) {
-    ul {
-      display: flex;
-      flex-direction: row;
-      margin-left: 200px;
-      margin-bottom: 90px; } }
+  list-style-type: none;
+  padding-left: 0; }
 
 p {
   color: gray;
@@ -483,245 +412,9 @@ p {
   margin: 0; }
   @media (min-width: 1400px) {
     p {
-      padding: 0;
-      font-size: 1em; } }
+      font-size: 1em;
+      padding: 0; } }
 
-/*
-
-body {
-  color: $color-text;
-  font-size: 1rem;
-  line-height: 1.5;
-  font-family: $font-stack-primary;
-  text-align: center;
-  margin: 0;
-}
-
-h1,
-h2 {
-  font-family: $font-stack-secondary;
-}
-
-p {
-  margin-bottom: 1.25em;
-}
-
-a {
-  color: $color-primary;
-  text-decoration: none;
-  &:hover {
-    color: $color-secondary;
-  }
-}
-
-*/
-/*
-
-* {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-body {
-	color: palette(grey);
-  font-size: $base__font-size;
-  font-family: $font-family--primary;
-  line-height: ($base__line/$base__font-size);
-}
-
-// Text
-
-h1 {
-	@extend %hdln-prim;
-}
-
-h2 {
-	@extend %hdln-sec;
-}
-
-h3 {
-	font-size: em(18px);
-}
-
-h4 {
-	margin-top: em(22px, 14px);
-	margin-bottom: em(32px, 14px);
-	color: palette(grey, x-light);
-	text-transform: uppercase;
-	letter-spacing: $letter-space;
-	font-weight: $font-weight--medium;
-	font-size: em(14px);
-}
-
-a {
-	color: palette(grey, dark);
-	text-decoration: none;
-	font-weight: $font-weight--medium;
-}
-
-p {
-	margin: 0 0 em(30px, 18px);
-	font-weight: $font-weight--light;
-	font-size: em(18px);
-	line-height: (27px/18px);
-}
-
-blockquote {
-	@media (min-width: 769px) {
-		margin: em(32px, 24px) 0;
-		padding: 0 0 0 5%;
-		border-left: em(8px, 24px) solid palette(grey, xx-light);
-		font-size: em(24px);
-	}
-	font-weight: $font-weight--light;
-	font-style : italic;
-	font-size : em(20px);
-}
-
-// Lists
-
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-// Images
-
-img {
-  margin-bottom: em(24px);
-  max-width: 100%;
-  height: auto;
-}
-
-// Form elements
-
-input,
-textarea {
-	display: block;
-	padding: 15px;
-	width: 100%;
-	outline: 0;
-	border: 0;
-}
-
-input:focus,
-textarea:focus {
-	transition: $trns_duration;
-}
-
-// Button
-
-button {
-	outline: 0;
-}
-
-// Layout
-
-footer {
-	border-top: 1px solid palette(grey, xx-light);
-	p {
-		font-size: em(16px);
-		margin-top: em(22px, 16px);
-	}
-}
-
-
-
-// Center elements
-
-.centered {
-	float: none;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-*/
-/* Base Styles -------------------- */
-/*
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  @include text(1em, 1.5, $color: $color-text-base);
-  margin: 0;
-  font-family: $stack-helvetica;
-}
-
-h1,
-h2 {
-  font-family: $stack-abolition;
-}
-
-h2 {
-  @include text(3.3125em, 1.1, normal);
-  margin: 0 0 .5em;
-}
-
-h3 {
-  @include text(1.25em, 1.2, $color: $color-text-dark);
-  margin-bottom: 1.7em;
-}
-
-img {
-  max-width: 100%;
-  margin-bottom: 20px;
-  border-radius: $br;
-}
-
-ul,
-ol {
-  margin: 30px 0;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-*/
-/* Pseudo-classes ------------------ */
-/*
-
-a {
-  &:link {
-    color: $color-link-default;
-    text-decoration: none;
-  }
-  &:visited {
-    color: $color-link-visited;
-  }
-  &:hover {
-    color: rgba($color-link-default, .5);
-  }
-}
-
-
-*/
-/*
-
-Grid:
-
-.container
-.grid__row
-
-.grid__col--2
-.grid__col--3
-.grid__col--4
-.grid__col--5
-.grid__col--6
-.grid__col--7
-.grid__col--8
-.grid__col--9
-.grid__col--10
-.grid__col--11
-.grid__col--12
-
-.centered
-
-*/
 .container {
   display: flex;
   flex-direction: column;
@@ -740,6 +433,7 @@ Grid:
   align-self: center; }
   @media (min-width: 1400px) {
     .grid__row {
+      display: flex;
       flex-direction: row;
       justify-content: flex-start;
       align-items: flex-start;
@@ -896,132 +590,130 @@ Grid:
   .grid__col--2.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 16.6666666667%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 16.6666666667%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--3,
   .grid__col--3.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 25%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 25%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--4,
   .grid__col--4.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 33.3333333333%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 33.3333333333%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--5,
   .grid__col--5.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 41.6666666667%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 41.6666666667%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--6,
   .grid__col--6.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 50%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 50%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--7,
   .grid__col--7.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 58.3333333333%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 58.3333333333%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--8,
   .grid__col--8.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 66.6666666667%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 66.6666666667%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--9,
   .grid__col--9.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 75%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 75%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--10,
   .grid__col--10.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 83.3333333333%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 83.3333333333%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--11,
   .grid__col--11.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 91.6666666667%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 91.6666666667%;
+    padding: 0;
+    margin: 0; } }
 @media (min-width: 1400px) {
   .grid__col--12,
   .grid__col--12.theme__colors {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
-    margin: 0;
-    padding: 0; } }
+    flex-basis: 100%;
+    padding: 0;
+    margin: 0; } }
 .grid__col--8 {
   margin-top: 5em; }
   @media (min-width: 1400px) {
     .grid__col--8 {
       margin-top: 0; } }
-
 @media (min-width: 1400px) {
   .grid__col--9 {
     flex-direction: row; } }
-
 @media (min-width: 1400px) {
   .grid__col--12 {
     flex-direction: row;
@@ -1110,17 +802,6 @@ Grid:
 .grid__col--7.centered {
   margin: auto; }
 
-/*
-
-Typography:
-
-.container
-.link
-.blockquote
-.headline--primary
-.headline--secondary
-
-*/
 .container {
   color: #343434;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1188,59 +869,52 @@ Typography:
       margin: 0;
       margin-bottom: 0.625em; } }
 
-/*
-//
-// Navigation:
-
-// .nav__item
-
-*/
-.nav__item {
-  list-style-type: none;
-  font-size: 1.125em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; }
+.nav {
+  margin: 0;
+  padding: 0; }
   @media (min-width: 1400px) {
-    .nav__item {
+    .nav {
+      display: flex;
       flex-direction: row;
-      width: auto; } }
-  .nav__item:last-of-type {
-    padding-bottom: 5em; }
+      margin-left: 200px;
+      margin-bottom: 90px; } }
+  .nav__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125em; }
     @media (min-width: 1400px) {
-      .nav__item:last-of-type {
-        margin: 0;
-        padding: 0; } }
-  .nav__item a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    width: 410px;
-    color: #343434;
-    border-radius: 0.4em;
-    padding: 12px 0;
-    margin-bottom: 5px; }
-    @media (min-width: 1400px) {
-      .nav__item a {
-        display: flex;
-        width: auto;
-        margin: 0;
-        margin-top: 73px;
-        margin-right: 30px;
-        padding: 7px; } }
-    .nav__item a:hover {
-      color: white;
-      background-color: #62ddc2; }
+      .nav__item {
+        flex-direction: row;
+        width: auto; } }
+    .nav__item:last-of-type {
+      padding-bottom: 5em; }
+      @media (min-width: 1400px) {
+        .nav__item:last-of-type {
+          margin: 0;
+          padding: 0; } }
+    .nav__item a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      width: 410px;
+      color: #343434;
+      border-radius: 0.4em;
+      padding: 12px 0;
+      margin-bottom: 5px; }
+      @media (min-width: 1400px) {
+        .nav__item a {
+          display: flex;
+          width: auto;
+          margin: 0;
+          margin-top: 73px;
+          margin-right: 30px;
+          padding: 7px; } }
+      .nav__item a:hover {
+        color: white;
+        background-color: #62ddc2; }
 
-/*
-
-Image:
-.img--logo
-.img--frame
-.img--avatar
-
-*/
 .img--logo {
   margin: 3.125em 0;
   margin-top: 3.125em;
@@ -1260,17 +934,13 @@ Image:
   margin-bottom: 1.875em; }
   @media (min-width: 1400px) {
     .img--frame {
-      width: 25.625em;
       width: 26.875em;
       margin-top: 2.5em;
       margin-left: 4.6875em;
       margin-bottom: 3.4375em; } }
 
 .img--avatar {
-  display: flex;
   margin: auto;
-  margin-top: 3.4375em;
-  margin-bottom: 2em;
   margin-top: 0em;
   margin-bottom: 1.25em; }
 
@@ -1278,35 +948,6 @@ Image:
   .grid__col--6 .img--avatar {
     margin-top: 3.4375em; } }
 
-/*
-
-All your styles for this project will be applied using the classes listed in
-the comment at the top of the index.html file. YouÔÇÖll style these classes
-in the components folder. Try not to combine selectors from two different
-categories. For example, avoid using .grid__col--8 .link to style
-the link in the typography section, as it makes the style of links
-dependent on what grid column theyÔÇÖre in. The best way to organize this
-is to make a file in the components folder for each of the following:
-
-=> Grid (recommend using flexbox)
-=> Typography
-=> Navigation
-=> Images
-=> Buttons
-=> Forms
-
-*/
-/*
-
-Buttons:
-
-.btn--default
-.btn--success
-.btn--error
-.btn--warning
-.btn--info
-
-*/
 .btn--default.theme__colors {
   color: white;
   background-color: #60daf0;
@@ -1316,10 +957,10 @@ Buttons:
   @media (min-width: 1400px) {
     .btn--default.theme__colors {
       width: auto;
-      margin-top: 50px;
-      margin-left: 50px;
       padding-left: 50px;
-      padding-right: 50px; } }
+      padding-right: 50px;
+      margin-top: 50px;
+      margin-left: 50px; } }
 .btn--success {
   color: white;
   background-color: #3fd96a;
@@ -1329,11 +970,11 @@ Buttons:
   @media (min-width: 1400px) {
     .btn--success {
       width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
       margin-top: 50px;
       margin-left: 50px;
-      margin-bottom: 0;
-      padding-left: 50px;
-      padding-right: 50px; } }
+      margin-bottom: 0; } }
 .btn--error {
   color: white;
   background-color: #ff4646;
@@ -1343,11 +984,11 @@ Buttons:
   @media (min-width: 1400px) {
     .btn--error {
       width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
       margin-top: 50px;
       margin-left: 50px;
-      margin-bottom: 0;
-      padding-left: 50px;
-      padding-right: 50px; } }
+      margin-bottom: 0; } }
 .btn--warning {
   color: white;
   background-color: #ee751e;
@@ -1357,11 +998,11 @@ Buttons:
   @media (min-width: 1400px) {
     .btn--warning {
       width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
       margin-top: 50px;
       margin-left: 50px;
-      margin-bottom: 0;
-      padding-left: 50px;
-      padding-right: 50px; } }
+      margin-bottom: 0; } }
 .btn--info {
   color: white;
   background-color: #9974f4;
@@ -1371,11 +1012,11 @@ Buttons:
   @media (min-width: 1400px) {
     .btn--info {
       width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
       margin-top: 50px;
       margin-left: 50px;
-      margin-bottom: 0;
-      padding-left: 50px;
-      padding-right: 50px; } }
+      margin-bottom: 0; } }
 .btn--default[type="submit"] {
   color: white;
   background-color: #60daf0;
@@ -1387,14 +1028,6 @@ Buttons:
       width: 350px;
       margin-bottom: 0; } }
 
-/*
-
-Forms:
-.form
-.form__label--hidden
-.form__input
-
-*/
 .form {
   display: flex;
   flex-direction: column;
@@ -1407,27 +1040,24 @@ Forms:
     padding: 0;
     margin-bottom: 45px;
     margin-top: -5px; }
-
-.form__label--hidden {
-  display: flex;
-  display: none; }
-
-.form__input {
-  display: flex;
-  align-self: center;
-  color: #343434;
-  font-weight: 700;
-  width: 375px;
-  border: none;
-  border-bottom: 5.5px solid #62ddc2;
-  outline: none;
-  padding-bottom: 10px;
-  padding-left: 15px;
-  margin-bottom: 30px; }
-  @media (min-width: 1400px) {
-    .form__input {
-      width: 325px; } }
-  .form__input:focus::placeholder {
-    visibility: hidden; }
+  .form__label--hidden {
+    display: none; }
+  .form__input {
+    display: flex;
+    align-self: center;
+    color: #343434;
+    font-weight: 700;
+    width: 375px;
+    border: none;
+    border-bottom: 5.5px solid #62ddc2;
+    outline: none;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    margin-bottom: 30px; }
+    @media (min-width: 1400px) {
+      .form__input {
+        width: 325px; } }
+    .form__input:focus::placeholder {
+      visibility: hidden; }
 
 /*# sourceMappingURL=styles.css.map */

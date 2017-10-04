@@ -1,13 +1,9 @@
-/*
-
-=> Use this partial to create variables for your repeated values.
-
-*/
-
+// ======================================================================
+//                        VARIABLES
+// ======================================================================
 
 // Fonts
 $font-family--primary    : 'Helvetica Neue', Helvetica, Arial, sans-serif;
-// $base__font-size         : 16px;
 $base__font-size         : 16px;
 // $base__line-height       : 24px;
 $base__line-height       : 1.5;
@@ -16,66 +12,44 @@ $font-weight--medium     : 400;
 $font-weight--bold       : 700;
 $font-weight--ultra-bold : 900;
 
-// 400,700,900 => these values work
-
-
 // Breakpoints
-
 $mobile  : 480px;
 $desktop : 1400px;
 
 // Number of Columns
-
 $grid__cols: 12;
 
+// Layout
+$max-width: 1000px;
+
+// Border radius
+$br--default    : .4em;
+$br--round      : 50%;
+$br: 10px;
 
 // Colors - Descriptive
 $white      : #fff;
 $black      : #000;
 $gray-dark  : #383838;
 $cyan       : #05EDFF;
-// $aquamarine : #80ffd4;
-// $aquamarine : #6fd5b2;
-// $aquamarine : #6fd5bf;
 $aquamarine  : #62ddc2;
 
+// Colors - Usage
+$color-primary   : $aquamarine;
+$color-secondary : $gray-dark;
+$color-accent    : $cyan;
 $color-text    : #343434;
 $color-bg      : #3acec2;
 $color-bg-light: #009fe1;
 
 // BUTTON COLORS
-
-// $color-submit: #009fe1;
-// $color-default : #60daf0;
-// $color-success : rgba(green, 0.5);
-// $color-error   : rgba(red, 0.5);
-// $color-warning : rgba(orange, 0.5);
-// $color-info    : rgba(purple, 0.5);
-
 $color-default : #60daf0;
 $color-success : #3fd96a;
 $color-error   : #ff4646;
 $color-warning : #ee751e;
 $color-info    : #9974f4;
 
-// Colors - Usage
-
-$color-primary   : $aquamarine;
-$color-secondary : $gray-dark;
-// $color-secondary-light: lighten($gray-dark, 35%);
-$color-accent    : $cyan;
-// $gray: #878787;
-// rgba(color/variable, 0-1)
-// @for $i from 1 through 10 {
-//     .box-#{$i} {
-//     background-color: adjust-hue(tomato, $i * 20);
-//   }
-// }
-
-// Ctrl+Alt+F
-
 // Map for Button Colors
-
 $button-colors: (
 	// default : $fountain-blue,
 	// success : $emerald,
@@ -83,97 +57,3 @@ $button-colors: (
 	// warning : $coral,
 	// info    : $purple-majesty
 );
-
-// Border radius
-
-$br--default    : .4em;
-$br--round      : 50%;
-
-// Border radius
-
-$br: 10px;
-
-// Layout
-$max-width: 1000px;
-$gutter: 10px;
-
-// Theme colors
-$themes: (
-  'ent': #79ccf5,
- 'arch': #fd6fa6,
-  'edu': #23bbae,
-  'sim': #2377bb,
-  'soc': #ada3f0,
-'games': #3cb144,
-);
-
-// Grid
-
-// $g-col-width    : 65px;
-// $g-gutter-width : 20px;
-// $g-col-count    : 12;
-// $g-cont-max-w   : 1050px;
-
-
-/*
-we'll write a function that gives us total control over the number of
-flex items being displayed on one line. The function will help us display
-equally sized and spaced items that line up perfectly across multiple lines.
-
-* if we create $gutter = 10px and add it as margin => it breaks the layout
-because the browser does not include margin values in its flex-basis
-calculations => we could apply smaller % like 45% to fix it.
-* So now, if we wanted to force three equal with items per line in a large
-break point, we need to manually figure out another flex basis value to
-achieve this. So Sass can do this work for us. We just need to create a
-function to do the calculations. The function will subtract the total gutter
-value of each line based on the number of items per line. So it's gonna return
-a percentage value we'll use as the flex basis.
-
-
-
-@function px-to-pc($target, $context: $max-width) {
-  @return ($target / $context) * 100%;
-}
-
-
-
-@function per-line($items) {
-  $g-pct: px-to-pc($gutter) * 2;
-  $g-total: $items * $g-pct;
-  @return (100% / $items) - $g-total;
-}
-
-
-=>
-@media (min-width: $break-s) {
-  flex: 1 per-line(2);
-}
-
-@media (min-width: $break-l) {
-  flex-basis: per-line(3);
-}
-
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

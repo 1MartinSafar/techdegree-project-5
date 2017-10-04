@@ -1,104 +1,52 @@
-/*
-//
-// Navigation:
+// ======================================================================
+//                        NAVIGATION
+// ======================================================================
 
-// .nav__item
-
-*/
-
-// %nav-item-horz {
-//   @include mq(medium) {
-//     display: inline-block;
-//     margin: 0 em(12px);
-//   }
-// }
-//
-// %nav-item-link {
-//   font-weight: $font-weight--light;
-//   text-align: center;
-//   font-size: em(18px);
-//   display: block;
-//   padding: em(8px, 18px);
-//   border-bottom: 1px solid transparent;
-//   @include mq(small) {
-//     border-bottom-color: palette(grey, xx-light);
-//     padding-top: em(14px, 18px);
-//     padding-bottom: em(14px, 18px);
-//   }
-// }
-
-
-
-// ==========================================================================
-// Nav
-// ==========================================================================
-
-.nav__item {
-  list-style-type: none;
-  font-size: em(18px);
-  // CHANGE INTO MIXIN LATER - with default options/null
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.nav {
+  margin: 0;
+  padding: 0;
   @include mq("desktop") {
-    flex-direction: row;
-    width: auto;
+    @include flexy(flex,row);
+    margin-left: 200px;
+    margin-bottom: 90px;
   }
-  &:last-of-type {
-    padding-bottom: em(80px);
+  @include e("item") {
+    @include flexy(flex,column,center,center);
+    font-size: em(18px);
     @include mq("desktop") {
-      margin: 0;
-      padding: 0;
-    }
-  }
-  a {
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    width: 410px;
-
-    color: $color-text;
-    border-radius: 0.4em;
-
-    padding: 12px 0;
-    margin-bottom: 5px;
-    @include mq("desktop") {
-      display: flex;
+      flex-direction: row;
       width: auto;
-      margin: 0;
-      margin-top: 73px;
-      margin-right: 30px;
-      padding: 7px;
     }
-    &:hover {
-      color: white;
-      background-color: $color-primary;
+    &:last-of-type {
+      padding-bottom: em(80px);
+      @include mq("desktop") {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      width: 410px;
+
+      color: $color-text;
+      border-radius: 0.4em;
+
+      padding: 12px 0;
+      margin-bottom: 5px;
+      @include mq("desktop") {
+        display: flex;
+        width: auto;
+        margin: 0;
+        margin-top: 73px;
+        margin-right: 30px;
+        padding: 7px;
+      }
+      &:hover {
+        color: white;
+        background-color: $color-primary;
+      }
     }
   }
 }
-
-// .nav__item {
-// 	margin-top: em(20px);
-// 	margin-bottom: em(30px);
-//
-//   @include e(item) {
-//     @extend %nav-item-horz;
-//     a {
-//       @extend %nav-item-link;
-//       color: palette(grey);
-//       &:hover {
-//         @extend %nav-item-on;
-//       }
-//     }
-//
-//   }
-// }
-
-// @include m(current) {
-//   @extend %nav-item-horz;
-//   a {
-//     @extend %nav-item-link;
-//     @extend %nav-item-on;
-//   }
-// }

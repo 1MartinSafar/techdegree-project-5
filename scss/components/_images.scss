@@ -1,11 +1,6 @@
-/*
-
-Image:
-.img--logo
-.img--frame
-.img--avatar
-
-*/
+// ======================================================================
+//                        IMAGES
+// ======================================================================
 
 .img--logo {
   margin: em(50px) 0;
@@ -27,7 +22,6 @@ Image:
   margin-top: em(30px);
   margin-bottom: em(30px);
   @include mq("desktop") {
-    width: em(410px);
     width: em(430px);
     margin-top: em(40px);
     margin-left: em(75px);
@@ -36,38 +30,13 @@ Image:
 }
 
 .img--avatar {
-  display:flex;
-
   margin: auto;
-  margin-top: em(55px);
-  margin-bottom: em(32px);
-
   margin-top: em(0px);
   margin-bottom: em(20px);
-}
-
-.form .img--avatar {
-  @include mq("desktop") {
-      // margin-top: em(0px);
-      // margin-bottom: em(20px);
-  }
 }
 
 .grid__col--6 .img--avatar {
   @include mq("desktop") {
       margin-top: em(55px);
-      // margin-top: em(0px);
-      // margin-bottom: em(20px);
   }
 }
-
-
-
-
-
-
-
-
-
-
-//

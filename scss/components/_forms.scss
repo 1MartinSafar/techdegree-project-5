@@ -1,71 +1,44 @@
-/*
-
-Forms:
-.form
-.form__label--hidden
-.form__input
-
-*/
+// ======================================================================
+//                        FORMS
+// ======================================================================
 
 .form {
-  display: flex;
-  flex-direction: column;
+  @include flexy(flex,column);
   width: 450px;
   @include mq("desktop") {
     padding-left: 50px;
   }
-  .btn--default {
-    margin: 0;
-    padding: 0;
-    margin-bottom: 45px;
-    margin-top: -5px;
+  .btn {
+    @include m("default") {
+      margin: 0;
+      padding: 0;
+      margin-bottom: 45px;
+      margin-top: -5px;
+    }
+  }
+  @include e("label") {
+    @include m(hidden) {
+      display: none;
+    }
+  }
+  @include e("input") {
+    @include flexy(flex, $self: center);
+    color: $color-text;
+    font-weight: $font-weight--bold;
+    width: 375px;
+
+    border: none;
+    border-bottom: 5.5px solid $color-primary;
+    outline: none;
+
+    padding-bottom: 10px;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    @include mq("desktop") {
+      width: 325px;
+    }
+    &:focus::placeholder {
+      visibility: hidden;
+    }
   }
 }
-
-.form__label--hidden {
-  display: flex;
-  display: none;
-}
-
-.form__input {
-  display: flex;
-  align-self: center;
-  color: $color-text;
-  font-weight: $font-weight--bold;
-  width: 375px;
-
-  border: none;
-  border-bottom: 5.5px solid $color-primary;
-  outline: none;
-
-  padding-bottom: 10px;
-  padding-left: 15px;
-  margin-bottom: 30px;
-  @include mq("desktop") {
-    width: 325px;
-  }
-
-  &::placeholder {
-    // padding-left: 15px;
-  }
-  &:focus::placeholder {
-    visibility: hidden;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

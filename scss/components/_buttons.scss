@@ -1,66 +1,26 @@
-/*
-
-All your styles for this project will be applied using the classes listed in
-the comment at the top of the index.html file. You’ll style these classes
-in the components folder. Try not to combine selectors from two different
-categories. For example, avoid using .grid__col--8 .link to style
-the link in the typography section, as it makes the style of links
-dependent on what grid column they’re in. The best way to organize this
-is to make a file in the components folder for each of the following:
-
-=> Grid (recommend using flexbox)
-=> Typography
-=> Navigation
-=> Images
-=> Buttons
-=> Forms
-
-*/
-
-/*
-
-Buttons:
-
-.btn--default
-.btn--success
-.btn--error
-.btn--warning
-.btn--info
-
-*/
+// ======================================================================
+//                        BUTTONS
+// ======================================================================
 
 .btn {
-  // &--default[type="submit"] {
-  //   @extend %btn-base;
-  //   color: white;
-  //   background-color: $color-default;
-  //   text-transform: uppercase;
-  //   margin-top: 30px;
-  //   margin-bottom: 10px;
-  //   @include mq("desktop") {
-  //     width: 350px;
-  //     margin-bottom: 0;
-  //   }
-  // }
-  &--default.theme__colors {
-    @extend %btn-base;
-    color: white;
-    background-color: $color-default;
-    text-transform: uppercase;
-    margin-top: 50px;
-
-    // TEST
-    margin-bottom: 10px;
-
-    @include mq("desktop") {
-      width: auto;
+  @include m("default") {
+    &.theme__colors {
+      @extend %btn-base;
+      color: white;
+      background-color: $color-default;
+      text-transform: uppercase;
       margin-top: 50px;
-      margin-left: 50px;
-      padding-left: 50px;
-      padding-right: 50px;
+      margin-bottom: 10px;
+      @include mq("desktop") {
+        width: auto;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-top: 50px;
+        margin-left: 50px;
+      }
     }
   }
-  &--success {
+  @include m("success") {
     @extend %btn-base;
     color: white;
     background-color: $color-success;
@@ -69,14 +29,14 @@ Buttons:
     margin-bottom: 10px;
     @include mq("desktop") {
       width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
       margin-top: 50px;
       margin-left: 50px;
       margin-bottom: 0;
-      padding-left: 50px;
-      padding-right: 50px;
     }
   }
-  &--error {
+  @include m("error") {
     @extend %btn-base;
     color: white;
     background-color: $color-error;
@@ -85,14 +45,14 @@ Buttons:
     margin-bottom: 10px;
     @include mq("desktop") {
       width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
       margin-top: 50px;
       margin-left: 50px;
       margin-bottom: 0;
-      padding-left: 50px;
-      padding-right: 50px;
     }
   }
-  &--warning {
+  @include m("warning") {
     @extend %btn-base;
     color: white;
     background-color: $color-warning;
@@ -101,14 +61,14 @@ Buttons:
     margin-bottom: 10px;
     @include mq("desktop") {
       width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
       margin-top: 50px;
       margin-left: 50px;
       margin-bottom: 0;
-      padding-left: 50px;
-      padding-right: 50px;
     }
   }
-  &--info {
+  @include m("info") {
     @extend %btn-base;
     color: white;
     background-color: $color-info;
@@ -117,45 +77,25 @@ Buttons:
     margin-bottom: 35px;
     @include mq("desktop") {
       width: auto;
+      padding-left: 50px;
+      padding-right: 50px;
       margin-top: 50px;
       margin-left: 50px;
       margin-bottom: 0;
-      padding-left: 50px;
-      padding-right: 50px;
     }
   }
-  &--default[type="submit"] {
-    @extend %btn-base;
-    color: white;
-    background-color: $color-default;
-    text-transform: uppercase;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    @include mq("desktop") {
-      width: 350px;
-      margin-bottom: 0;
+  @include m("default") {
+    &[type="submit"] {
+      @extend %btn-base;
+      color: white;
+      background-color: $color-default;
+      text-transform: uppercase;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      @include mq("desktop") {
+        width: 350px;
+        margin-bottom: 0;
+      }
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

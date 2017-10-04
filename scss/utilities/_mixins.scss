@@ -1,17 +1,8 @@
-/*
-
-Inside your mixins partial, you’ll want to create mixins for:
-=> Media Queries
-=> Flexbox settings
-=> Element and Modifier BEM Selectors
-
-*/
-
-
 // ======================================================================
-//                        ALREADY IN USE NOW
+//                        MIXINS - USED
 // ======================================================================
 
+// MEDIA QUERIES
 @mixin mq($break) {
   @if $break == "mobile" {
     @media (min-width: $mobile) {
@@ -24,51 +15,35 @@ Inside your mixins partial, you’ll want to create mixins for:
     }
   }
    @else {
-   	@error "Whoops! No value could be retrieved for `#{$break}`. ";
+   	@error "Error! Invalid breakpoint `#{$break}`. ";
   }
 }
 
-// ======================================================================
-//                        OTHERS
-// ======================================================================
-
-
-
-// BEM selectors
-
+// BEM ELEMENT SELECTOR
 @mixin e($element) {
 	&__#{$element} {
     @content;
   }
 }
+// BEM MODIFIER SELECTOR
 @mixin m($modifier) {
   &--#{$modifier} {
     @content;
   }
 }
 
-// Media queries
-// @mixin mq($break) {
-//   $value: map-get($breakpoints, $break);
-//   $sm: map-get($breakpoints, 'sm');
-//
-//   @if $value == null {
-//     @error "`#{$break}` is not a valid breakpoint name.";
-//   }
-//
-//   @else if $value < $sm {
-//     @media (max-width: $value) {
-//       @content;
-//     }
-//   }
-//   @else {
-//     @media (min-width: $value) {
-//       @content;
-//     }
-//   }
-// }
+// Create a flex container
+@mixin flexy($disp: flex, $dir: null, $just: null, $items: null, $self: null) {
+  display: $disp;
+  flex-direction: $dir;
+  justify-content: $just;
+  align-items: $items;
+  align-self: $self;
+}
 
-
+// ======================================================================
+//                        OTHERS
+// ======================================================================
 
 // Adjacent sibling margins
 
@@ -79,21 +54,7 @@ Inside your mixins partial, you’ll want to create mixins for:
 	}
 }
 
-@mixin g-columns {
-  @for $i from 1 through $g-col-count {
-    $context: g-context($g-col-width, $g-col-count ,$g-gutter-width) !global;
-    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
-
-    // Generate column modifier classes
-    &--#{$i} {
-      width: percentage($target / $context);
-    }
-  }
-}
-
-
 // Text
-
 @mixin text($size, $l-height: null, $weight: null, $color: null) {
   font-size: $size;
   line-height: $l-height;
@@ -108,30 +69,3 @@ Inside your mixins partial, you’ll want to create mixins for:
   margin-left: auto;
   margin-right: auto;
 }
-
-
-// Create a flex container
-@mixin flexy(
-  $disp: flex,
-  $dir: null,
-  $wrap: null,
-  $just: null) {
-  display: $disp;
-  flex-direction: $dir;
-  flex-wrap: $wrap;
-  justify-content: $just;
-}
-
-// @mixin theme($color) {
-//   .grid__row {
-//     .theme__colors {
-//       background-color: $color;
-//     }
-//   }
-// }
-
-// @include theme(yellow);
-
-// @include theme(theme-banana, yellow);
-// @include theme(theme-blueberry, purple);
-// @include theme(theme-cherry, red);
