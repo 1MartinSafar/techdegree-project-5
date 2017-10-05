@@ -11,9 +11,9 @@
 }
 
 .link {
+  @extend %link;
   color: $color-accent;
   font-weight: $font-weight--bold;
-  text-decoration: none;
 }
 
 .blockquote {
@@ -40,36 +40,26 @@
 }
 
 .headline--primary {
+  @extend %headline-p;
   color: $color-primary;
   font-weight: $font-weight--ultra-bold;
   line-height: 1.1;
 
-  padding-top: em(1px);
-  padding-left: em(30px);
-  padding-right: em(30px);
-  padding-bottom: em(20px);
-  padding-bottom: em(15px);
-  margin: 0;
   @include mq("desktop") {
     font-size: 1.75em;
     font-weight: $font-weight--bold;
+
     padding-top: em(5px);
     padding-left: em(15px);
     padding-right: em(15px);
-    padding-bottom: em(14px);
     padding-bottom: em(20px);
   }
 }
 .headline--secondary {
-  font-size: em(18px);
-  font-weight: $font-weight--medium;
+  @extend %headline-s;
   color: rgba(black, 0.5);
-
-  padding-top: em(10px);
-  padding-left: em(36px);
-  padding-bottom: em(10px);
-  margin: 0;
-  margin-top: 15px;
+  font-weight: $font-weight--medium;
+  font-size: em(18px);
 
   @include mq("desktop") {
     padding: 0;
@@ -78,26 +68,3 @@
     margin-bottom: em(10px);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

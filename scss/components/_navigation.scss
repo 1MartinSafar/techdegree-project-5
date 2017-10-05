@@ -3,15 +3,15 @@
 // ======================================================================
 
 .nav {
-  margin: 0;
-  padding: 0;
+  @extend %mp-reset;
   @include mq("desktop") {
     @include flexy(flex,row);
     margin-left: 200px;
     margin-bottom: 90px;
   }
+
   @include e("item") {
-    @include flexy(flex,column,center,center);
+    @extend %nav-items;
     font-size: em(18px);
     @include mq("desktop") {
       flex-direction: row;
@@ -25,14 +25,10 @@
       }
     }
     a {
-      display: block;
-      text-align: center;
-      text-decoration: none;
+      @extend %links;
       width: 410px;
-
       color: $color-text;
       border-radius: 0.4em;
-
       padding: 12px 0;
       margin-bottom: 5px;
       @include mq("desktop") {

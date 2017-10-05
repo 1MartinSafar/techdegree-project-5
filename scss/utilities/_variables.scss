@@ -5,7 +5,6 @@
 // Fonts
 $font-family--primary    : 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $base__font-size         : 16px;
-// $base__line-height       : 24px;
 $base__line-height       : 1.5;
 
 $font-weight--medium     : 400;
@@ -25,7 +24,7 @@ $max-width: 1000px;
 // Border radius
 $br--default    : .4em;
 $br--round      : 50%;
-$br: 10px;
+$br             : 10px;
 
 // Colors - Descriptive
 $white      : #fff;
@@ -48,12 +47,3 @@ $color-success : #3fd96a;
 $color-error   : #ff4646;
 $color-warning : #ee751e;
 $color-info    : #9974f4;
-
-// Map for Button Colors
-$button-colors: (
-	// default : $fountain-blue,
-	// success : $emerald,
-	// error   : $sunglo,
-	// warning : $coral,
-	// info    : $purple-majesty
-);

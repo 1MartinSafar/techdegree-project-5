@@ -2,6 +2,7 @@
 //                        PLACEHOLDERS
 // ======================================================================
 
+// BUTTON - PLACEHOLDER
 %btn-base {
   align-self: center;
   width: 400px;
@@ -18,8 +19,68 @@
   text-align: center;
 }
 
-// // Top border
-//
-// %t-border {
-//   border-top: 2px solid $color-border-light;
-// }
+// BORDER BOTTOM - PLACEHOLDER
+%b-border {
+  border: none;
+  border-bottom: 5.5px solid $color-primary;
+  outline: none;
+}
+
+// IMAGES - PLACEHOLDERS
+%logo-mobile {
+  margin-top: em(50px);
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: em(40px);
+}
+%frame-mobile {
+  padding: em(12.5px);
+  margin-top: em(30px);
+  margin-bottom: em(30px);
+}
+%avatar-mobile {
+  margin: auto;
+  margin-top: em(0px);
+  margin-bottom: em(20px);
+}
+
+// HEADLINES - PLACEHOLDERS
+%headline-p {
+  padding-top: em(1px);
+  padding-left: em(30px);
+  padding-right: em(30px);
+  padding-bottom: em(15px);
+  margin: 0;
+}
+%headline-s {
+  padding-top: em(10px);
+  padding-left: em(36px);
+  padding-bottom: em(10px);
+  margin: 0;
+  margin-top: 15px;
+}
+
+// NAV ITEM - PLACEHOLDER
+%nav-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// MARGIN + PADDING RESET - PLACEHOLDER
+%mp-reset {
+  margin: 0;
+  padding: 0;
+}
+
+// LINKS - PLACEHOLDER
+%links {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+%link {
+  text-decoration: none;
+}
